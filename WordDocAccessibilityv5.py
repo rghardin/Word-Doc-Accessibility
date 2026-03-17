@@ -618,7 +618,7 @@ HEADING2: [exact text of another heading 2]
 If no title is found in this section, respond with TITLE: NONE
 Only include headings that are clearly section headers, not regular paragraph text.
 Return the EXACT text as it appears - do not paraphrase or modify.
-
+{user_prompt}
 Document text:
 {chunk}"""
         
@@ -1053,6 +1053,14 @@ if api_key is not None and api_key != "":
             accept_multiple_files=True, 
             key=26
         )
+        
+        # Additional text input for prompt
+        user_prompt = st.text_area(
+            "Optional: enter additional instructions for identifying titles and headings.",
+            height="content",
+            key=27,
+            help = "This may include specific ways styles are indicated visually or organized in your documents. A response is not required to search for styles based on context."
+            )
         
         # Process button
         if uploaded_files:
