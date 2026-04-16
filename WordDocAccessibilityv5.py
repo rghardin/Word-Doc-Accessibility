@@ -991,7 +991,7 @@ if api_key is not None and api_key != "":
         # Font selection
         font = st.selectbox(
             "Pick a recommended font for accessibility", 
-            ["Arial", "Calibri", "Verdana", "Tahoma", "Helvetica", "Aptos"], 
+            ["Open Sans", "Arial", "Calibri", "Verdana", "Tahoma", "Helvetica", "Aptos"], 
             key=0
         )
         
